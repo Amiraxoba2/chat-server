@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func LoadKeys() *rsa.PrivateKey {
+func LoadKey() *rsa.PrivateKey {
 	pemBytes, _ := os.ReadFile("resource/key.rsa")
 	block, _ := pem.Decode(pemBytes)
 	privateKey, _ := x509.ParsePKCS1PrivateKey(block.Bytes)

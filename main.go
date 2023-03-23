@@ -12,5 +12,6 @@ func main() {
 	engine.POST("/register", route.Register)
 	engine.POST("/login", route.Login)
 	engine.GET("/messages", route.LoadMessages)
+	engine.POST("/send", route.SendMessage)
 	engine.Run(":8080")
 }
