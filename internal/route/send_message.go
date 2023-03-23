@@ -10,7 +10,6 @@ import (
 func SendMessage(context *gin.Context) {
 	tokenRaw := context.PostForm("token")
 	token := strings.ReplaceAll(tokenRaw, " ", "+")
-	println(token)
 	var user model.User
 	r := data.DB.Raw("SELECT * FROM users WHERE token=?", token).Scan(&user)
 	if r.RowsAffected == 0 {
